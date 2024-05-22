@@ -1,0 +1,49 @@
+.card-section {
+    width: 325px;
+    border-radius: 50px !important;
+    height: 380px;
+    margin-right: 55px;
+    padding: 5px !important;
+
+}
+
+.card-section:hover {
+    border: 3px solid gray;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+
+.ml-60 {
+    margin-left: 60px;
+}
+
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+.img-style {
+    border-radius: 150px;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+}
+
+.container {
+    margin-left: 150px;
+}
+
+.available-week {
+    margin-left: 95px;
+    color: #d69b08;
+    ;
+}
+
+.available-time {
+    margin-left: 80px;
+    color: #007291;
+    font-size: 12px;
+    margin-top: -10px;
+}

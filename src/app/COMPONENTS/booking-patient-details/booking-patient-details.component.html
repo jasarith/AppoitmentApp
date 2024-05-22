@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="my-container" style="margin-top: 70px;">
+        <h2 class="books-heading my-container">Booking Patient Details</h2>
+        <p class="books-heading my-container" *ngIf="bookingData.length==0">There are No patients booked</p>
+
+        <table class="table table-bordered " *ngIf="bookingData.length >0">
+            <thead>
+                <tr class="table-secondary">
+
+                    <th>Patient Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Health Issue</th>
+                    <th>Doctor name</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-secondary" *ngFor="let x of bookingData">
+
+                    <td>{{x.patientName | uppercase}}</td>
+                    <td>{{x.date}}</td>
+                    <td>{{x.timings['time']}}</td>
+                    <td>{{x.description}}</td>
+                    <td>{{x.doctorsName}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</div>

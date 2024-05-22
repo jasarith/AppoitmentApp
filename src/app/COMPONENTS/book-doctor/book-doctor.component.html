@@ -1,0 +1,47 @@
+<div class="col-lg-8" style="border-radius: 15px;">
+    <div class=" p-5">
+        <h2 class="text-uppercase text-center mb-5 mt-20">Schedule Appointment</h2>
+        <form [formGroup]="bookForm" (ngSubmit)="bookAppointment(bookForm.value)">
+            <div class="row ml-2">
+                <h4 class="text-danger message-flag">{{errorMessage}}</h4>
+                <h4 class="text-danger message-flag">{{errorFlag}}</h4>
+                <h4 class="text-danger message-flag">{{timeflag}}</h4>
+                <!--   <h4 class="text-success">{{successMessage}}</h4> -->
+            </div>
+
+            <div class="form-outline mb-4 col-lg-6">
+                <input type="text" id="form3Example1cg" placeholder="PatientName" formControlName="patientName"
+                    class="form-control form-control-lg" />
+                <label class="form-label" for="form3Example1cg">Patient Name</label>
+            </div>
+            <div class="row col-lg-12">
+                <div class="form-outline mb-4 col-lg-4">
+                    <input class="col-lg-3" type="date" min="{{ minimumDate}}" id="form3Example1cg" placeholder="Date"
+                        formControlName="date" class="form-control form-control-lg" />
+
+
+                    <label class="form-label" for="form3Example1cg">Date</label>
+
+                </div>
+                <div class="form-outline mb-4 col-lg-3">
+                    <select style="height: 45px;" formControlName="timings">
+                        <option *ngFor="let time of availablityTimings" [ngValue]="time">{{time?.time}}</option>
+                    </select>
+                    <label class="form-label" for="form3Example1cg">Time</label>
+                </div>
+            </div>
+            <div class="form-outline mb-4 col-lg-6">
+                <textarea class="form-control form-control-lg-6" id="form3Example1cg" placeholder="Health Issue"
+                    formControlName="description">
+
+                </textarea>
+
+                <label class="form-label" for="form3Example1cg">Patient Health Issue</label>
+            </div>
+            <button type="button" class="btn btn-primary mt-10" (click)="bookAppointment(bookForm.value)"
+                style="background: linear-gradient(to bottom right, #007291, #224855);">
+                Book Appointment
+            </button>
+        </form>
+    </div>
+</div>
